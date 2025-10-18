@@ -1,7 +1,7 @@
 import { ShoppingCart } from "@mui/icons-material";
 import { Badge } from "@mui/material";
 import { NavLink } from "react-router-dom";
-
+import "../styles/NavBarComponent.css";
 const NavBarComponent = () => {
   return (
     <div>
@@ -23,12 +23,17 @@ const NavBarComponent = () => {
           </button>
           <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div className="navbar-nav">
-              <NavLink to="/" className="nav-link active" aria-current="page">
+              <NavLink to="/" className="nav-link " aria-current="page">
                 Productos
               </NavLink>
             </div>
+            <div className="navbar-nav">
+              <NavLink to="/carrito" className="nav-link " aria-current="page">
+                Carrito
+              </NavLink>
+            </div>
           </div>
-          <NavLink to="/carrito">
+          <NavLink className="cart-icon" to="/carrito">
             <Badge badgeContent={4} color="primary">
               <ShoppingCart />
             </Badge>

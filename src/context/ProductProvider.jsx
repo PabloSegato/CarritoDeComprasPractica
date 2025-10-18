@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
 import Swal from "sweetalert2";
-const ProductsPage = () => {
+import ProductContext from "./ProductContext";
+
+const ProductProvider = ({ children }) => {
   const [products, setProducts] = useState([]);
 
   const fetchProducts = async () => {
     try {
-      const response = await fetch(`https://fakestoreapi.com/productos`);
+      const response = await fetch(`https://fakestoreapi.com/products`);
       const data = await response.json();
       setProducts(data);
     } catch (error) {
@@ -18,19 +20,15 @@ const ProductsPage = () => {
     }
   };
 
-  console.log(products);
-
   useEffect(() => {
     fetchProducts();
   }, []);
 
   return (
-    <>
-      {products.map((item) => (
-        <p key={item.id}> {item.title} </p>
-      ))}
-    </>
+    <ProductContext.Provider value={{ products }}>
+      {children}
+    </ProductContext.Provider>
   );
 };
 
-export default ProductsPage;
+export default ProductProvider;

@@ -1,0 +1,60 @@
+.card {
+  display: flex;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+  flex-direction: row;
+  align-items: center;
+}
+
+.cardImg {
+  height: 100px;
+  width: 100px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+.cardContent {
+  flex: 1;
+}
+
+.cardTitle {
+  margin: 0;
+}
+
+.cardDescription {
+  margin: 0 0 10px 0;
+}
+
+.cardPrice {
+  margin: 0;
+  font-weight: bold;
+}
+
+.removeButton {
+  background-color: rgb(233, 58, 58);
+  border-style: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: 0.5s all ease;
+}
+
+.addButton {
+  background-color: rgb(30, 150, 60);
+  border-style: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: 0.5s all ease;
+}
+
+.addButton:hover {
+  background-color: rgb(33, 167, 66);
+}
+
+.removeButton:hover {
+  background-color: rgb(228, 87, 87);
+}
